@@ -17,7 +17,7 @@ namespace Star
         static void destroy()
         {
           delete m_instance;
-          m_instance = NULL;
+          m_instance = 0;
         }
 
       protected:
@@ -28,6 +28,6 @@ namespace Star
         static T* m_instance;
     };
 
-  template <typename T> T* Singleton<T>::m_instance = NULL;
+  template <typename T> T* Singleton<T>::m_instance = 0;
 }
 #endif
