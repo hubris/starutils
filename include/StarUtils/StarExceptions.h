@@ -4,6 +4,7 @@
 #ifdef WIN32
 #include <windows.h>
 #endif
+
 #include <string>
 #include <iostream>
 #include <SDL.h>

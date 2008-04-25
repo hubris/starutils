@@ -1,6 +1,10 @@
 #ifndef STARTIMER_H
 #define STARTIMER_H
 
+#ifdef _WIN32
+#pragma comment(lib, "winmm.lib")
+#endif
+
 namespace Star
 {
   class Timer

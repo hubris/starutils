@@ -1,25 +1,21 @@
 #include <StarUtils/StarTimer.h>
 
-#include <sys/time.h>
+#include <windows.h>
 
 namespace Star
 {
   /******************************************************************************/
   void
   Timer::start()
-  {
-    struct timeval tv;
-    gettimeofday(&tv, 0);
-    m_sec = tv.tv_sec+tv.tv_usec*1e-6;
+  { 
+    m_sec = timeGetTime()*1e3f;
   }
 
   /******************************************************************************/
   double
   Timer::getElapsedSeconds()
   {
-    struct timeval tv;
-    gettimeofday(&tv, 0);
-    double curSec = tv.tv_sec+tv.tv_usec*1e-6;
+    double curSec = timeGetTime()*1e3f;
     return curSec-m_sec;
   }
 }
