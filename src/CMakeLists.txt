@@ -4,7 +4,13 @@ else(WIN32)
   set(SRC StarTimerLinux.cpp)
 endif(WIN32)
 
-add_library(StarUtils ${SRC})
+set(HEADERS ../include/StarUtils/StarExceptions.h  
+            ../include/StarUtils/StarExport.h
+            ../include/StarUtils/StarSingleton.h  
+            ../include/StarUtils/StarTimer.h)
+
+source_group($HEADERS)
+add_library(StarUtils ${SRC} ${HEADERS})
 
 install(TARGETS StarUtils
         RUNTIME DESTINATION bin
