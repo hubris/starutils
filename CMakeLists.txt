@@ -18,6 +18,10 @@ include(FindDoxygen)
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR}/lib)
 
+if(WIN32)
+  add_definitions(/DNOMINMAX)
+endif(WIN32)
+
 include_directories(include)
 add_subdirectory(src)
 add_subdirectory(include)

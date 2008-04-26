@@ -2,7 +2,7 @@
 #define STARTIMER_H
 
 #ifdef _WIN32
-#pragma comment(lib, "winmm.lib")
+#include <windows.h>
 #endif
 
 namespace Star
@@ -28,6 +28,9 @@ namespace Star
 
   private:
     double m_sec;
+#ifdef _WIN32
+    static _int64 s_frequency;    
+#endif
   };
 }
 

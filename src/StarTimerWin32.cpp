@@ -1,21 +1,30 @@
 #include <StarUtils/StarTimer.h>
-
-#include <windows.h>
+#include <algorithm>
 
 namespace Star
 {
+  _int64 Timer::s_frequency = 0;
+
   /******************************************************************************/
   void
   Timer::start()
-  { 
-    m_sec = timeGetTime()*1e3f;
+  {     
+    if ( s_frequency == 0 )
+      QueryPerformanceFrequency((LARGE_INTEGER*)&s_frequency);
+    
+    _int64 ticks;
+    QueryPerformanceCounter((LARGE_INTEGER*)&ticks);
+    m_sec = ticks/double(s_frequency);
   }
 
   /******************************************************************************/
   double
   Timer::getElapsedSeconds()
   {
-    double curSec = timeGetTime()*1e3f;
-    return curSec-m_sec;
+    _int64 ticks;
+    QueryPerformanceCounter((LARGE_INTEGER*)&ticks);
+    double curSec = ticks/double(s_frequency);
+
+    return std::max(curSec-m_sec, 0.);
   }
 }
