@@ -24,7 +24,7 @@ namespace Star
      * @return the number of elpased second since
      * the last call to start
      */
-    double getElapsedSeconds();
+    float getElapsedSeconds();
 
   private:
     double m_sec;

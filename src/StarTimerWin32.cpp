@@ -18,13 +18,13 @@ namespace Star
   }
 
   /******************************************************************************/
-  double
+  float
   Timer::getElapsedSeconds()
   {
     _int64 ticks;
     QueryPerformanceCounter((LARGE_INTEGER*)&ticks);
     double curSec = ticks/double(s_frequency);
 
-    return std::max(curSec-m_sec, 0.);
+    return (float)std::max(curSec-m_sec, 0.);
   }
 }
