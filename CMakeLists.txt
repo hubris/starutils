@@ -28,5 +28,5 @@ add_subdirectory(include)
 
 if (DOXYGEN_FOUND)
   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
-  add_custom_target(doc ${DOXYGEN_EXECUTABLE} ${DOXY_CONFIG})
+  add_custom_target(docUtils ${DOXYGEN_EXECUTABLE} ${DOXY_CONFIG})
 endif(DOXYGEN_FOUND)
