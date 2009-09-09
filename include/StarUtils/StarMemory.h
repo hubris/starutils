@@ -2,6 +2,7 @@
 #define STARMEMORY_H
 
 #include <string>
+#include <StarMath.h>
 
 namespace Star {
   namespace Memory {
