@@ -1,13 +1,15 @@
 #ifndef STARFILE_H
 #define STARFILE_H
 
+#include "StarExport.h"
+
 #include <string>
 
 namespace Star {
   namespace File {
 
     /** Create a string with same name as filename but with the given extension */
-    inline std::string
+    inline std::string STARUTILS_EXPORT
     changeFilenameExtension(const std::string& filename, const std::string& ext)
     {
       std::string outputFilename = filename;
@@ -18,7 +20,7 @@ namespace Star {
     }
 
     /** Remove the path from given filename*/
-    inline std::string
+    inline std::string STARUTILS_EXPORT
     removePath(const std::string& filename)
     {
       std::string outputFilename = filename;
@@ -29,7 +31,7 @@ namespace Star {
     }
 
     /** Return the path component */
-    inline std::string
+    inline std::string STARUTILS_EXPORT
     getPath(const std::string& filename)
     {
       std::string outputFilename = filename;

@@ -1,9 +1,11 @@
 #ifndef SINGLETON_H
 #define SINGLETON_H
 
+#include "StarExport.h"
+
 namespace Star
 {
-  template <typename T>
+  template <typename T> STARUTILS_EXPORT
     class Singleton
     {
       public:

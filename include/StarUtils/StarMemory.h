@@ -1,12 +1,14 @@
 #ifndef STARMEMORY_H
 #define STARMEMORY_H
 
+#include "StarExport.h"
+
 #include <string>
 #include <StarMath.h>
 
 namespace Star {
   namespace Memory {
-      template<typename Container>
+      template<typename Container> STARUTILS_EXPORT
       void copySubBlock3D(Container& dest, const Star::uint3& destDim,
                           const Container& block, const Star::uint3& blockSize,
                           const Star::uint3& pos)

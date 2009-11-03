@@ -5,9 +5,11 @@
 #include <windows.h>
 #endif
 
+#include "StarExport.h"
+
 namespace Star
 {
-  class Timer
+  class STARUTILS_EXPORT Timer
   {
   public:
     /**
@@ -29,7 +31,7 @@ namespace Star
   private:
     double m_sec;
 #ifdef _WIN32
-    static _int64 s_frequency;    
+    static _int64 s_frequency;
 #endif
   };
 }

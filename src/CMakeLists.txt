@@ -10,7 +10,7 @@ set(HEADERS ../include/StarUtils/StarExceptions.h
             ../include/StarUtils/StarTimer.h)
 
 source_group($HEADERS)
-add_library(StarUtils ${SRC} ${HEADERS})
+add_library(StarUtils SHARED ${SRC} ${HEADERS})
 
 install(TARGETS StarUtils
         RUNTIME DESTINATION bin
